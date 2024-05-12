@@ -9,7 +9,7 @@
 }
 
 body{
-  color: aliceblue;
-  height: 100vh;
-  background-color: #282335;
+  color: rgb(255, 255, 255);
+  min-height: 100vh;
+  background-color: #0e032b;
 }
