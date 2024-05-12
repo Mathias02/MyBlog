@@ -1,15 +1,16 @@
-import React from 'react'
+
 import Image from 'next/image'
 import Link from 'next/link'
 
 const FrontPage = () => {
   return (
-    <section className='mt-20 bg-green'>
+    <section className='mt-20'>
     <div className='grid md:grid-cols-2 gap-2'>
-      <div className="p-1 rounded-md flex flex-col items-center justify-center bg-gray-500">
-        <h1 className="text-3xl font-semibold capitalize text-left"><span className="text-5xl space-y-2 text-green">Discover </span><br />the true meaning through these topic </h1>
-        <p className="mt-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique nemo eum est soluta commodi sint qui aliquam quam blanditiis dicta incidunt ipsum suscipit cupiditate alias vero doloribus praesentium, numquam temporibus.</p>
-        <div className="flex gap-4 mt-5">
+      <div className="rounded-md flex flex-col justify-center bg-gray-600">
+        <h1 className="text-5xl text-stone-400 text-left font-bold mb-2 pl-2">Encounter</h1>
+        <h2 className='text-xl text-left pl-2'>Through these topics the revelation of the word of God</h2>
+        <p className="mt-4 text-left pl-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique nemo eum est soluta commodi sint qui aliquam quam blanditiis dicta incidunt ipsum suscipit cupiditate alias vero doloribus praesentium, numquam temporibus.</p>
+        <div className="flex justify-center gap-4 mt-5">
           <Link href={'/viewTopics'}>
             <button className="btn btn-md capitalize">view posts</button>
           </Link>
@@ -19,7 +20,7 @@ const FrontPage = () => {
         </div>
       </div>
       <div>
-        <Image src={'/images/6.jpg'} width={950} height={600} alt="leftImg" className="rounded-md"/>
+        <Image src={'/images/6.jpg'} width={950} height={600} alt="leftImg" className="rounded-md object-cover"/>
       </div>
     </div>
   </section>

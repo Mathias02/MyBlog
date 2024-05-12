@@ -17,12 +17,12 @@ const AddTopics = () => {
           </div>
           <div>
             <TextareaAutosize 
-            minRows={15}
+            minRows={10}
             className={`${inputCss} text-xl`}
             name='content'
             placeholder='Please enter your content'/>
           </div>
-          <button className='btn btn-success btn-large w-full text-xl text-white cursor-pointer focus:bg-blue text-red'>Enter</button>
+          <button className='btn btn-accent btn-large w-full text-xl text-red cursor-pointer focus:bg-blue text-red'>Enter</button>
         </form>
     </section>
   )
