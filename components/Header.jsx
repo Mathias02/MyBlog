@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const HeaderPage = () => {
   return (
-    <header className=" flex items-center justify-between box-shadow bg-white px-6 fixed top-0 right-0 left-0">
+    <header className=" flex items-center justify-between box-shadow-md bg-white px-6 fixed top-0 right-0 left-0">
         <div className="flex justify-between items-center px-2 py-3 text-black space-x-20">
             <Link href={'/'}>
               <Image src={"/logo.svg"} width={125} height={125} alt="logoImg" />
