@@ -10,44 +10,44 @@ const ViewTopics = () => {
           <Link href={'/viewTopics/id'}>
             <div className="box bg-white p-4">
               <h1 className="text-black font-bold">Box1</h1> 
-              <p>It's been said that no one is allowed to see them</p>
-              <p className="font-semibold">created by: Elle</p>
+              <p className="font-semibold opacity-60">created by: Elle</p>
+              <p className="mt-3">It's been said that no one is allowed to see them</p>
             </div>
           </Link>
           <div className="box bg-white p-4">
             <h1 className="text-black font-bold">Box2</h1> 
-            <p>It's been said that no one is allowed to see them</p>
-            <p className="font-semibold">created by: Djo</p>
+            <p className="font-semibold opacity-60">created by: Djo</p>
+            <p className="mt-3">It's been said that no one is allowed to see them</p>
           </div>
           <div className="box bg-white p-4">
             <h1 className="text-black font-bold">Box3</h1> 
-            <p>It's been said that no one is allowed to see them</p>
-            <p className="font-semibold">created by: Charles</p>
+            <p className="font-semibold opacity-60">created by: Charles</p>
+            <p className="mt-3">It's been said that no one is allowed to see them</p>
           </div>
           <div className="box bg-white p-4">
             <h1 className="text-black font-bold">Box4</h1> 
-            <p>It's been said that no one is allowed to see them</p>
-            <p className="font-semibold">created by: Sylvia</p>
+            <p className="font-semibold opacity-60">created by: Sylvia</p>
+            <p className="mt-3">It's been said that no one is allowed to see them</p>
           </div> 
           <div className="box bg-white p-4">
-            <h1 className="text-black font-bold">Box5</h1> 
-            <p>It's been said that no one is allowed to see them</p>
-            <p className="font-semibold">created by: Georges</p>
+            <h1 className="text-black font-bold">Box5</h1>
+            <p className="font-semibold opacity-60">created by: Georges</p> 
+            <p className="mt-3">It's been said that no one is allowed to see them</p>
           </div>
           <div className="box bg-white p-4">
             <h1 className="text-black font-bold">Box6</h1> 
-            <p>It's been said that no one is allowed to see them</p>
-            <p className="font-semibold">created by: Charles</p>
+            <p className="font-semibold opacity-60">created by: Charles</p>
+            <p className="mt-3">It's been said that no one is allowed to see them</p>
           </div>
           <div className="box bg-white p-4">
             <h1 className="text-black font-bold">Box7</h1> 
-            <p>It's been said that no one is allowed to see them</p>
-            <p className="font-semibold">created by: Sylvia</p>
+            <p className="font-semibold opacity-60">created by: Sylvia</p>
+            <p className="mt-3">It's been said that no one is allowed to see them</p>
           </div> 
           <div className="box bg-white p-4">
             <h1 className="text-black font-bold">Box8</h1> 
-            <p>It's been said that no one is allowed to see them</p>
-            <p className="font-semibold">created by: Georges</p>
+            <p className="font-semibold opacity-60">created by: Georges</p>
+            <p className="mt-3">It's been said that no one is allowed to see them</p>
           </div>
         </div>
       </div>
