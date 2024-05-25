@@ -1,7 +1,12 @@
 'use client'
 
+import axios from 'axios';
 import { useState } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
+import { useRouter } from 'next/navigation';
+
+
+
 
 
 const AddTopics = () => {
@@ -11,6 +16,8 @@ const AddTopics = () => {
     content: '',
   })
 
+  const router = useRouter();
+
   const handleChange = (e) =>{
     e.preventDefault();
     const {name, value}= e.target;
@@ -19,9 +26,17 @@ const AddTopics = () => {
     });
   };
 
-    const formSubmit = (e) => {
+    const formSubmit = async (e) => {
       e.preventDefault();
-      console.log(formData)
+      try {
+        const response = await axios.post('api/posts', formData);
+        if(response.status === 200){
+            router.push(`app/viewTopics/${response.newPost.id}`); 
+        }
+      } catch (error) {
+        console.error(error)
+      }
+      
     }
 
   

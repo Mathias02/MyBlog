@@ -1,11 +1,12 @@
+
 import FrontPage from "@/components/Front"
 
 
 function HomPage() {
 
   return (
-    <FrontPage />
-  )
+      <FrontPage />
+  );
 }
 
-export default HomPage
+export default HomPage;

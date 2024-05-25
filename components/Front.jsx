@@ -1,8 +1,9 @@
-
 import Image from 'next/image'
 import Link from 'next/link'
 
+
 const FrontPage = () => {
+
   return (
     <section className='mt-20'>
     <div className='grid md:grid-cols-2 gap-2'>

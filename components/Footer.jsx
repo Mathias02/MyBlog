@@ -9,8 +9,7 @@ const FooterPage = () => {
                 <p className='opacity-40'>Born to learn and teach others</p>
             </div>
             <p className='opacity-60 text-gray-100'>&copy; 2024. MTD Ba-manya-yi, Matt</p>
-        </div>
-       
+        </div>  
     </footer>
   )
 }

@@ -1,8 +1,9 @@
-
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+
 
 const HeaderPage = () => {
+
   return (
     <header className=" flex items-center justify-between box-shadow-md bg-white px-6 fixed top-0 right-0 left-0">
         <div className="flex justify-between items-center px-2 py-3 text-black space-x-20">
@@ -16,7 +17,7 @@ const HeaderPage = () => {
             </ul>
         </div>
         <div>
-            <button className="btn btn-md btn-outline btn-success text-xs capitalize">subscribe to our newsletter</button>
+            <button className="btn btn-md btn-outline btn-success text-xs capitalize">Logout</button>
         </div>
     </header>
   )
