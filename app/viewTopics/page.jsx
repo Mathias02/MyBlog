@@ -8,7 +8,6 @@ const ViewTopics = async () => {
       createdAt: 'desc',
     },
   });
- console.log(posts)
  
   return (
     <section>
@@ -16,12 +15,14 @@ const ViewTopics = async () => {
         <h1 className="text-center text-3xl text-blue mb-5">Posts</h1>
         <div className="grid md:grid-cols-3 gap-2 text-black p-4">
           {posts.map((post) => {
+           return(
             <Link key={post.id} href={`/viewTopics/${post.id}`} className='bg-white shadow-md'>
-              <div className="bg-white-600 flex flex-col">
-                <h2>{post.title}</h2>
+              <div>
+                <h2 className="font-semibold text-red-600">{post.title}</h2>
                 <p>{post.content}</p>
               </div>
             </Link>
+           ) 
           })}
         </div>
       </div>
