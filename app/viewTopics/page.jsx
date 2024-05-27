@@ -1,11 +1,12 @@
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
+import { compareAsc, format } from "date-fns";
 
 const ViewTopics = async () => {
 
   const posts = await prisma.post.findMany({
     orderBy: {
-      createdAt: 'desc',
+      createdAt: 'asc',
     },
   });
  
@@ -16,13 +17,13 @@ const ViewTopics = async () => {
         <div className="grid md:grid-cols-3 gap-2 text-black p-4">
           {posts.map((post) => {
            return(
-            <Link key={post.id} href={`/viewTopics/${post.id}`} className='bg-white shadow-md'>
+            <Link key={post.id} href={`/viewTopics/${post.id}`} className='bg-white shadow-md rounded-md p-4 text-xl'>
               <div>
-                <h2 className="font-semibold text-red-600">{post.title}</h2>
-                <p>{post.content}</p>
+                <h2 className="font-semibold text-blue-800 capitalize">{post.title}</h2>
+                <p className="opacity-40 text-xs">Date: {format(post.createdAt,'d-MM-yyyy')}</p>
               </div>
             </Link>
-           ) 
+           )
           })}
         </div>
       </div>

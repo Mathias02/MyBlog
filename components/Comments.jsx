@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Comments = () => {
+const Comments = ({postId}) => {
   return (
     <div className='mt-2 w-full bg-gray-300 text-sm p-2 text-left rounded-md'>
         <span className='text-blue-700 text-sm font-bold mr-1 mb-2'>By Charles,</span>

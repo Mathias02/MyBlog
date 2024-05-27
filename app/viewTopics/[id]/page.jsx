@@ -1,15 +1,22 @@
-import Comments from '@/components/Comments'
-import FormComments from '@/components/FormComments'
+import Comments from '@/components/Comments';
+import FormComments from '@/components/FormComments';
+import { prisma } from '@/lib/prisma';
 
 
-const postPage = () => {
+
+const postPage = async ({params}) => {
+  const post = await prisma.post.findFirst({
+    where: {
+      id: params.id,
+    },
+  });
+
   return (
-    <article className='mt-20 max-w-2xl mx-auto bg-white text-black px-3 py-2 h-100%'>
-      <h1 className='font-bold text-2xl'>Post one</h1>
-      <p>By Elle</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque sunt dolore sit voluptatibus et nulla labore doloremque, minus dolor ipsam quam suscipit necessitatibus ratione impedit natus expedita modi quisquam! Voluptas!</p>
-      <Comments />
-      <FormComments />
+    <article className='mt-20 max-w-2xl mx-auto bg-white text-black text-left px-3 py-2 mb-20'>
+      <h1 className='font-bold text-2xl mb-2 text-red-700 capitalize'>{post.title}</h1>
+      <p>{post.content}</p>
+      <Comments postId={params.id}/>
+      <FormComments postId={params.id}/>
     </article>
   )
 }
