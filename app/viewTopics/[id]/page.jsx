@@ -12,12 +12,12 @@ const postPage = async ({params}) => {
   });
 
   return (
-    <article className='mt-20 max-w-2xl mx-auto bg-white text-black text-left px-3 py-2 mb-20'>
-      <h1 className='font-bold text-2xl mb-2 text-red-700 capitalize'>{post.title}</h1>
-      <p>{post.content}</p>
+    <div className='mt-20 max-w-2xl mx-auto bg-white text-black text-left px-3 py-2 mb-20'>
+      <h1 className='font-bold text-2xl mb-2 text-red-700 capitalize'>{post?.title}</h1>
+      <p>{post?.content}</p>
       <Comments postId={params.id}/>
       <FormComments postId={params.id}/>
-    </article>
+    </div>
   )
 }
 

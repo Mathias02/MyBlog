@@ -1,11 +1,33 @@
-import React from 'react'
 
-const Comments = ({postId}) => {
+import { prisma } from "@/lib/prisma";
+import { format } from "date-fns";
+
+
+const Comments = async ({postId}) => {
+  
+  const results = await prisma.comment.findMany({
+    where: {
+      postId,
+    },
+  });
+
   return (
-    <div className='mt-2 w-full bg-gray-300 text-sm p-2 text-left rounded-md'>
-        <span className='text-blue-700 text-sm font-bold mr-1 mb-2'>By Charles,</span>
-        <span className='text-gray-900 opacity-50 mr-1'>10-June-2021.</span>
-        <p className='inline text-left'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore facere in fugiat vel assumenda ad necessitatibus voluptate, dignissimos dicta placeat, maiores perferendis repellat ullam eveniet odit ex dolorem, nisi dolorum.</p>
+    <div className="mt-2">
+      <h4 className="text-left font-bold mb-1">Comments</h4>
+      <ul>
+        {results.map((cmt) => {
+          return(
+            <li key={cmt.id} className="bg-gray-300 py-2 px-1 rounded-md mb-1">
+                <div className="flex items-center">
+                  <div className="text-xs">
+                    <li>{cmt.text}</li>
+                    <li className="mt-1 text-slate-600 text-xs">{format(cmt.createdAt, 'd,MM,yyyy')}</li>
+                  </div>
+                </div>
+            </li>
+          )
+        })}
+      </ul>
     </div>
   )
 }

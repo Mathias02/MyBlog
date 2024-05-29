@@ -1,7 +1,8 @@
 'use client'
+import axios from "axios";
 import { useState } from "react";
 
-const FormComments = () => {
+const FormComments = ({postId}) => {
 
     const [comment, setComment] = useState('');
 
@@ -9,9 +10,18 @@ const FormComments = () => {
         setComment(e.target.value)
     };
 
-    const submitComment = () => {
-        console.log(comment)
-    }
+    const submitComment = async () => {
+      if(comment.trim() !== '') {
+        try {
+          const nexEntry = await axios.post('/api/addcomment', {
+            postId, text: content
+          })
+        } catch (error) {
+          console.error(error)
+        }
+      }
+       
+    };
 
 
   return (

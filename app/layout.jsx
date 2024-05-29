@@ -14,8 +14,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <HeaderPage />
-        <main className="min-h-full max-w-7xl text-center border border-white p-3">
-        {children}
+        <main className="max-w-7xl text-center h-[calc(100vh - 40%)]">
+          {children}
         </main>
         <FooterPage />
       </body>

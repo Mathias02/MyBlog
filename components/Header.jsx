@@ -5,8 +5,8 @@ import Image from "next/image";
 const HeaderPage = () => {
 
   return (
-    <header className=" flex items-center justify-between box-shadow-md bg-white px-6 fixed top-0 right-0 left-0">
-        <div className="flex justify-between items-center px-2 py-3 text-black space-x-20">
+    <header className=" flex items-center justify-between box-shadow-md bg-white px-6 mb-15">
+        <div className="flex justify-between items-center px-2 py-3 text-black space-20">
             <Link href={'/'}>
               <Image src={"/logo.svg"} width={125} height={125} alt="logoImg" />
             </Link>
