@@ -8,8 +8,6 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 
 
-
-
 const AddTopics = () => {
   
   const [formData, setFormData] = useState({
@@ -30,10 +28,22 @@ const AddTopics = () => {
     const formSubmit = async (e) => {
       e.preventDefault();
       try {
-        const response = await axios.post('api/posts', formData);
-        if(response.status === 200){
-          router.push('/viewTopics');  
+        const response = await fetch('api/posts',{
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        })
+        
+        if(response.ok){
+          alert("post successfully created")
+          setFormData('')
+          router.push('/viewTopics')
+        }else{
+          alert("something went wrong")
         }
+        
       } catch (error) {
         console.error(error)
       }  
@@ -41,31 +51,35 @@ const AddTopics = () => {
 
   
   return (
-    <div className="bg-gray-500 mt-8 max-w-4xl mx-auto">
-        <h2 className='p-2 ont-semibold text-xl'>Create your post here</h2>
-        <form className="mx-auto w-full" onSubmit={formSubmit}>
-          <div className='mb-2'>
-            <input 
-            type='text' 
-            value={formData.title}
-            className={`${inputCss} text-xl text-gray-500 `} 
-            name="title" 
-            id="title" 
-            onChange={handleChange}
-            placeholder="your topic here" required/>
+    <section className='md:min-h-96'>
+        <div className="bg-gray-200 py-10">
+          <div className="max-w-3xl mx-auto sm:h-full">
+            <h2 className='font-semibold text-2xl text-black mb-4'>Create a new post</h2>
+            <form className="mx-auto w-full sm:py-13" onSubmit={formSubmit}>
+              <div className='mb-2'>
+                <input 
+                type='text' 
+                value={formData.title}
+                className={`${inputCss} text-xl text-gray-500 `} 
+                name="title" 
+                id="title" 
+                onChange={handleChange}
+                placeholder="your topic here" required/>
+              </div>
+              <div>
+                <TextareaAutosize 
+                minRows={6}
+                className={`${inputCss} text-xl text-black mb-4 resize-none`}
+                name='content'
+                value={formData.content}
+                onChange={handleChange}
+                placeholder='Please enter your content' required/>
+              </div>
+              <button type='submit' className='mb-8 btn btn-success w-full text-xl text-red-300 cursor-pointer focus:bg-blue text-red'>Enter</button>
+            </form>
           </div>
-          <div>
-            <TextareaAutosize 
-            minRows={6}
-            className={`${inputCss} text-xl text-black`}
-            name='content'
-            value={formData.content}
-            onChange={handleChange}
-            placeholder='Please enter your content' required/>
-          </div>
-          <button type='submit' className='btn btn-success w-full text-xl text-red cursor-pointer focus:bg-blue text-red'>Enter</button>
-        </form>
-    </div>
+        </div>
+    </section>
   )
 }
 

@@ -12,7 +12,7 @@ export async function POST(Request) {
                   title, content
                 }
             }) 
-            return NextResponse.json({newPost},{status: 200});     
+            return NextResponse.json(newPost, { status: 200 });     
         } catch (error) {
             return NextResponse.json({message: 'Something went wrong'},{status: 500});
         }

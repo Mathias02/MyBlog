@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <HeaderPage />
-        <main className="max-w-7xl text-center h-[calc(100vh - 40%)]">
+        <main className="max-w-7xl text-center">
           {children}
         </main>
         <FooterPage />
