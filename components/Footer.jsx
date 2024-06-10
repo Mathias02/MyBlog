@@ -2,7 +2,7 @@
 
 const FooterPage = () => {
   return (
-    <footer className='bg-black py-6 px-4 fixed bottom-0 w-full border-t border-white'>
+    <footer className='bg-black py-6 px-4 fixed bottom-0 w-full'>
         <div className='flex justify-around'>
             <div className="flex flex-col gap-1">
                 <h2 className='font-bold'>Learn from inspired people to be inspired with new inspiration</h2>
