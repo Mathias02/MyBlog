@@ -1,21 +1,17 @@
-
-import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
-
+import { NextResponse } from "next/server";
 
 export async function POST(Request) {
-  
-    const {postId, text} = await Request.json();
-
         try {
-            const newCmt = await prisma.comment.create({
+            const {postId, text} = await Request.json();
+            const newComment = await prisma.comment.create({
                 data:{
-                  postId, text: content
+                  postId, text
                 }
-            }) 
-            return NextResponse.json({newCmt},{status: 200});     
+            });
+            return NextResponse.json(newComment, { status: 200 }); 
         } catch (error) {
+
             return NextResponse.json({message: 'Something went wrong'},{status: 500});
-        }
-            
+        }          
 }

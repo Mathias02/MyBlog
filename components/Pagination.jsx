@@ -10,11 +10,11 @@ const Pagination = ({postPerPage, totalPage, pageChanger}) => {
   }
 
   return (
-   <div className="flex mx-auto justify-center pt-5">
+   <div className="flex mx-auto justify-center pt-5 absolute bottom-0 left-[50%] right-[50%]">
      <ul className="mx-auto flex space-x-4">
         {
           pageNumbers.map((page) => {
-            return(
+            return (
               <li key={page} className="hover:text-blue-400 rounded-full border py-1 px-3 hover:bg-green-400 hover:text-black">
                 <Link onClick={() => pageChanger(page)}  className="text-white" href='#'>{page}</Link>
               </li>

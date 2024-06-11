@@ -11,7 +11,7 @@ const ViewTopics = () => {
 
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postPerPage, setPostPerPage] = useState(9);
+  const [postPerPage, setPostPerPage] = useState(12);
 
 // fetching data
 
@@ -26,7 +26,6 @@ const ViewTopics = () => {
   },[]);
  
   // get current page 
-
   const lastPage = currentPage * postPerPage;
   const firstPage = lastPage - postPerPage; 
 
@@ -34,7 +33,6 @@ const ViewTopics = () => {
   const pages = posts.slice(firstPage, lastPage); 
 
   //change pages
-
   const pageChanger = (pageIndex) => setCurrentPage(pageIndex);
   
 
@@ -42,7 +40,7 @@ const ViewTopics = () => {
     <section>
       <div className="bg-cyan-800 p-2 h-screen px-10">
         <div className="flex justify-end pr-4 capitalize text-sm">
-          <Link href={'/addTopics'} className=" transition-all duration-50 py-4 hover:text-green-400">create post</Link>
+          <Link href={'/addTopics'} className="transition-all duration-50 py-4 hover:text-green-400">create post</Link>
         </div>
         <h1 className="text-2xl">Posts</h1>
 
